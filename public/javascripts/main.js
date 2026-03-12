@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem('usuario');
             updateLogin();
             updateFavorites();
-            Swal.fire({ title: 'Sesión cerrada', icon: 'success', heightAuto: false });
+            Swal.fire({ title: 'Sesión cerrada', icon: 'success', confirmButtonColor: '#0d6efd', heightAuto: false });
         } else {
             // Si no está logueado, muestra el modal de login con SweetAlert2
             Swal.fire({
