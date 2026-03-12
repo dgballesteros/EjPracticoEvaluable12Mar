@@ -66,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 preConfirm: function() {
                     const user = document.getElementById('swal-user').value;
                     const pass = document.getElementById('swal-pass').value;
+                    if (!user || !pass) {
+                        Swal.showValidationMessage('Rellena todos los campos');
+                        return false;
+                    }
                     if (user !== 'admin' || pass !== '1234') {
                         Swal.showValidationMessage('Usuario o contraseña incorrectos');
                         return false;
@@ -110,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const loggedIn = isLoggedIn();
         const favs = getFavorites();
         // Recorre todos los botones que tengan data-id
-        const buttons = document.querySelectorAll('.btn');
+        const buttons = document.querySelectorAll('[data-id]');
         buttons.forEach(function(btn) {
             if (!btn.dataset.id) return;
             const id = parseInt(btn.dataset.id);
