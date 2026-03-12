@@ -1,8 +1,9 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/* Ancho fijo del sidebar lateral */
+#sidebar {
+  width: 300px;
 }
 
-a {
-  color: #00B7FF;
+/* Cursor pointer en los elementos del listado */
+#lista-monumentos li {
+  cursor: pointer;
 }

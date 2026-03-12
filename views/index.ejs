@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monumentos de Málaga</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/vendor/leaflet/leaflet.css"/>
+    <link href="/vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to mi web personal socio</p>
-  </body>
+</head>
+<body class="d-flex flex-column vh-100 overflow-hidden">
+
+    <!-- Barra de navegación -->
+    <nav class="navbar px-3 py-2 bg-primary flex-shrink-0" id="main-navbar">
+        <span class="navbar-brand text-white fs-4" style="font-family: 'Raleway', sans-serif; font-weight: 600;">Monumentos de Málaga</span>
+        <button id="btn-login" class="btn btn-outline-light btn-sm rounded-pill px-3 border border-2">Login</button>
+    </nav>
+
+    <!-- Contenedor principal con el mapa y el listado lateral -->
+    <div id="app-body" class="d-flex flex-grow-1 overflow-hidden">
+        <!-- Mapa -->
+        <div id="map" class="flex-grow-1 h-100"></div>
+
+        <!-- Sidebar con el listado de monumentos -->
+        <div id="sidebar" class="flex-shrink-0 border-start bg-white overflow-y-auto">
+            <ul id="lista-monumentos" class="list-unstyled mb-0"></ul>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="main-footer" class="text-center py-2 small bg-light border-top text-muted flex-shrink-0">
+        Aplicación desarrollada por Daniel García
+    </footer>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/leaflet/leaflet.js"></script>
+    <script src="/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+</body>
 </html>
